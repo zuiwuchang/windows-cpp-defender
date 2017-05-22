@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1495421586 source:f:\project\c++\gcc\windows-cpp-defender\simulator\main.cpp
+	<windows.h>
+	<boost/thread.hpp>
+	<king/Debug.hpp>
+
