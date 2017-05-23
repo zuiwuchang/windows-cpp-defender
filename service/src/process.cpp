@@ -10,7 +10,7 @@ void work_thread(const std::wstring& directory,const std::wstring& bin)
 {
     try
     {
-        std::wstring dll(directory + DLL_FILE);
+        std::wstring dll(directory + L"\\" + DLL_FILE);
 
         boost::filesystem::wpath path(bin);
         std::wstring dir = path.remove_filename().wstring();
