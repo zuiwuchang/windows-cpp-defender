@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1495505564 source:f:\project\c++\gcc\windows-cpp-defender\hook\main.cpp
+	"main.h"
+	<iostream>
+	"service.h"
+
+1446667744 f:\project\c++\gcc\windows-cpp-defender\hook\main.h
+	<windows.h>
+
+1495505992 source:f:\project\c++\gcc\windows-cpp-defender\hook\src\service.cpp
+	"service.h"
+	"../../service/configure.h"
+	<boost/filesystem.hpp>
+
+1495508628 f:\project\c++\gcc\windows-cpp-defender\hook\include\service.h
+	"../../service/singleton.hpp"
+	<windows.h>
+	<boost/thread.hpp>
+
+1495432611 f:\project\c++\gcc\windows-cpp-defender\service\singleton.hpp
+
+1495442426 f:\project\c++\gcc\windows-cpp-defender\service\configure.h
+	<king/Debug.hpp>
+
+1495508371 source:f:\project\c++\gcc\windows-cpp-defender\hook\src\hook.cpp
+	"hook.h"
+	"hookfuncs.h"
+
+1495508372 f:\project\c++\gcc\windows-cpp-defender\hook\include\hook.h
+	<windows.h>
+
+1495508185 f:\project\c++\gcc\windows-cpp-defender\hook\include\hookfuncs.h
+
