@@ -58,6 +58,8 @@ void work_thread(const std::wstring& directory,const std::wstring& bin)
 			WaitForSingleObject(process.hProcess,INFINITE);
 			CloseHandle(process.hProcess);
 			CloseHandle(process.hThread);
+
+			boost::this_thread::sleep(boost::posix_time::seconds(1));
         }
     }
     catch(boost::thread_interrupted&)
