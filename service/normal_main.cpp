@@ -2,8 +2,16 @@
 #include "service.h"
 #include <iostream>
 #include "configure.h"
+
+BOOL WINAPI CtrlHandler(DWORD fdwCtrlType) ;
 int normal_main()
 {
+    //註冊 ctrl 鉤子
+    if(!SetConsoleCtrlHandler(  CtrlHandler, TRUE ))
+    {
+        KING_ERROR("normal_main can not SetConsoleCtrlHandler")
+    }
+
     //初始化
     service& s = service::get_mutable_instance();
     if(! s.init())
@@ -12,22 +20,26 @@ int normal_main()
     }
 
     //運行服務
-   if(! s.run())
-   {
-       return 1;
-   }
+    if(! s.run())
+    {
+        return 1;
+    }
 
-   //cmd
-   std::string cmd;
-   while(true)
-   {
-       std::cout<<"\n\n$>";
+    //cmd
+    std::string cmd;
+    while(true)
+    {
+        std::cout<<"\n\n$>";
         std::cin>>cmd;
+        if(!std::cin)
+        {
+            break;
+        }
         if("exit" == cmd)
         {
             break;
         }
-   }
+    }
 
     //停止 服務
     s.stop();
@@ -37,4 +49,21 @@ int normal_main()
 
     KING_INFO("normal_main exit success")
     return 0;
+}
+BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
+{
+    KING_INFO("CtrlHandler "<<fdwCtrlType)
+    switch( fdwCtrlType )
+    {
+    case CTRL_C_EVENT:
+    case CTRL_CLOSE_EVENT:
+    case CTRL_LOGOFF_EVENT:
+    case CTRL_SHUTDOWN_EVENT:
+        {
+            service& s = service::get_mutable_instance();
+            s.stop();
+            s.wait();
+        }
+    }
+    return FALSE;
 }
