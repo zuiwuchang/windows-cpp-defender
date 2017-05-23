@@ -118,6 +118,7 @@ bool service::load()
 }
 int service::install()
 {
+    int result = 0;
     //打開 scm
     SC_HANDLE scm = OpenSCManager(NULL,NULL,SC_MANAGER_CREATE_SERVICE);
     if(scm)
@@ -156,6 +157,7 @@ int service::install()
         }
         else
         {
+            result = 1;
             if(ERROR_SERVICE_EXISTS == GetLastError())
             {
                 KING_FAULT("Service is already exists")
@@ -172,13 +174,14 @@ int service::install()
     else
     {
         KING_FAULT("OpenSCManager error")
-        return 1;
+        result = 1;
     }
 
-    return 0;
+    return result;
 }
 int service::uninstall()
 {
+    int result = 0;
     //打開 scm
     SC_HANDLE scm = OpenSCManager(NULL,NULL,SC_MANAGER_CREATE_SERVICE);
     if(scm)
@@ -189,6 +192,7 @@ int service::uninstall()
         {
             if(!DeleteService(s))
             {
+                result = 1;
                 KING_FAULT("DeleteService error");
             }
             //關閉 服務句柄
@@ -196,15 +200,17 @@ int service::uninstall()
         }
         else
         {
-            KING_FAULT("can not OpenService"<<utf::wchar_to_char(_name))
+            KING_FAULT("can not OpenService "<<utf::wchar_to_char(_name))
+            result = 1;
         }
+        CloseServiceHandle(scm);
     }
     else
     {
         KING_FAULT("OpenSCManager error")
-        return 1;
+        result = 1;
     }
-    return 0;
+    return result;
 }
 
 //初始化 資源

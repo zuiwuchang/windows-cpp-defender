@@ -11,8 +11,10 @@
 
 1495431630 f:\project\c++\gcc\windows-cpp-defender\service\main.h
 
-1495431713 source:f:\project\c++\gcc\windows-cpp-defender\service\service_main.cpp
+1495517534 source:f:\project\c++\gcc\windows-cpp-defender\service\service_main.cpp
+	<windows.h>
 	"main.h"
+	"service.h"
 
 1495510287 source:f:\project\c++\gcc\windows-cpp-defender\service\normal_main.cpp
 	"main.h"
