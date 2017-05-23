@@ -32,6 +32,11 @@ class service
         //關閉信號
         HANDLE _signal;
     public:
+        //返回 服務名
+        inline const std::wstring& name()const
+        {
+            return _name;
+        }
         //加載配置
         bool load();
         //安裝服務
