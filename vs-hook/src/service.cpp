@@ -91,11 +91,12 @@ void service::work_thread()
 
 	//調用 ctrl + c
 	PHANDLER_ROUTINE ctrlHandler = ctrl_handler();
+	
 	if(ctrlHandler)
 	{
 		ctrlHandler(CTRL_C_EVENT);
 	}
-
+	
 	//關閉 進程
 	ExitProcess(0);
 }

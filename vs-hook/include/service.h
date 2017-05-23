@@ -30,6 +30,14 @@ class service
             boost::mutex::scoped_lock  lock(_mutex);
             return _ctrlHandler ;
         }
+		inline void reset_ctrl_handler(const PHANDLER_ROUTINE ctrlHandler)
+		{
+			boost::mutex::scoped_lock  lock(_mutex);
+            if(ctrlHandler == _ctrlHandler)
+			{
+				_ctrlHandler = NULL;
+			}
+		}
     public:
         //開始 服務初始化 之後運行
         void run(HINSTANCE hinstDLL);

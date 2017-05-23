@@ -94,10 +94,11 @@ void work_thread()
 }
 BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
 {
+    KING_INFO("fdwCtrlType = "<<fdwCtrlType)
     switch( fdwCtrlType )
     {
     case CTRL_C_EVENT:
-        KING_DEBUG("CTRL_C_EVENT")
+        KING_INFO("CTRL_C_EVENT")
         if(g_thread)
         {
             g_thread->interrupt();
@@ -106,7 +107,7 @@ BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
         }
         return FALSE;
     case CTRL_CLOSE_EVENT:
-        KING_DEBUG("CTRL_CLOSE_EVENT")
+        KING_INFO("CTRL_CLOSE_EVENT")
         if(g_thread)
         {
             g_thread->interrupt();
@@ -114,7 +115,7 @@ BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
         }
         return FALSE;
     case CTRL_LOGOFF_EVENT:
-        KING_DEBUG("CTRL_LOGOFF_EVENT")
+        KING_INFO("CTRL_LOGOFF_EVENT")
         if(g_thread)
         {
             g_thread->interrupt();
@@ -122,7 +123,7 @@ BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
         }
         return FALSE;
     case CTRL_SHUTDOWN_EVENT:
-        KING_DEBUG("CTRL_SHUTDOWN_EVENT")
+        KING_INFO("CTRL_SHUTDOWN_EVENT")
         if(g_thread)
         {
             g_thread->interrupt();
