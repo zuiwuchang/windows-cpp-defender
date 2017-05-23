@@ -52,6 +52,7 @@
 			</Target>
 		</Build>
 		<Unit filename="include/hook.h" />
+		<Unit filename="include/hook.hpp" />
 		<Unit filename="include/hookfuncs.h" />
 		<Unit filename="include/service.h" />
 		<Unit filename="main.cpp" />

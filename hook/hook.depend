@@ -1,18 +1,23 @@
 # depslib dependency file v1.0
-1495505564 source:f:\project\c++\gcc\windows-cpp-defender\hook\main.cpp
+1495510287 source:f:\project\c++\gcc\windows-cpp-defender\hook\main.cpp
 	"main.h"
 	<iostream>
 	"service.h"
 
-1446667744 f:\project\c++\gcc\windows-cpp-defender\hook\main.h
+1495510287 f:\project\c++\gcc\windows-cpp-defender\hook\main.h
 	<windows.h>
 
-1495505992 source:f:\project\c++\gcc\windows-cpp-defender\hook\src\service.cpp
+1495510287 source:f:\project\c++\gcc\windows-cpp-defender\hook\src\service.cpp
 	"service.h"
 	"../../service/configure.h"
+	"../../service/utf.hpp"
 	<boost/filesystem.hpp>
+	<boost/property_tree/ptree.hpp>
+	<boost/property_tree/json_parser.hpp>
+	<boost/algorithm/string.hpp>
+	"hook.h"
 
-1495508628 f:\project\c++\gcc\windows-cpp-defender\hook\include\service.h
+1495510287 f:\project\c++\gcc\windows-cpp-defender\hook\include\service.h
 	"../../service/singleton.hpp"
 	<windows.h>
 	<boost/thread.hpp>
@@ -22,12 +27,22 @@
 1495442426 f:\project\c++\gcc\windows-cpp-defender\service\configure.h
 	<king/Debug.hpp>
 
-1495508371 source:f:\project\c++\gcc\windows-cpp-defender\hook\src\hook.cpp
+1495522751 source:f:\project\c++\gcc\windows-cpp-defender\hook\src\hook.cpp
 	"hook.h"
 	"hookfuncs.h"
+	"hook.hpp"
 
-1495508372 f:\project\c++\gcc\windows-cpp-defender\hook\include\hook.h
+1495510287 f:\project\c++\gcc\windows-cpp-defender\hook\include\hook.h
 	<windows.h>
 
-1495508185 f:\project\c++\gcc\windows-cpp-defender\hook\include\hookfuncs.h
+1495522600 f:\project\c++\gcc\windows-cpp-defender\hook\include\hookfuncs.h
+	<windows.h>
+
+1495524496 f:\project\c++\gcc\windows-cpp-defender\hook\include\hook.hpp
+	<windows.h>
+	<boost/smart_ptr.hpp>
+
+1495435982 f:\project\c++\gcc\windows-cpp-defender\service\utf.hpp
+	<windows.h>
+	<boost/smart_ptr.hpp>
 

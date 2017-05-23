@@ -11,8 +11,8 @@ protected:
         static T t;
         return t;
     }
-    singleton(const type_t&copy)=delete;
-    type_t& operator=(const type_t&copy)=delete;
+    singleton(const type_t&copy);
+    type_t& operator=(const type_t&copy);
 public:
     singleton()
     {
