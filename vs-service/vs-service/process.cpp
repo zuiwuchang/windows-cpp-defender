@@ -1,13 +1,12 @@
+#include "stdafx.h"
 #include "process.h"
-#include "../configure.h"
-#include <boost/filesystem.hpp>
-#include <boost/thread.hpp>
-#include <windows.h>
+#include <cpp-defender/configure.h>
+
 #define DLL_FILE L"hook.dll"
-#include "../utf.hpp"
+#include <cpp-defender/utf.hpp>
 
 bool inject(HANDLE hProcess,const std::wstring& dll);
-void work_thread(const std::wstring& directory,const std::wstring& bin)
+void work_thread(const std::wstring& directory,const std::wstring& bin,const std::wstring& params)
 {
     try
     {
@@ -15,9 +14,19 @@ void work_thread(const std::wstring& directory,const std::wstring& bin)
 
         boost::filesystem::wpath path(bin);
         std::wstring dir = path.remove_filename().wstring();
-std::wstring bin1 = L"E:\\program\\king-document-build/king-document-build.exe -importPath king-document-build -srcPath E:/program/king-document-build/src -runMode prod";
         PROCESS_INFORMATION process;
         STARTUPINFO startupinfo;
+
+		wchar_t binBuffer[MAX_PATH];
+		wcscpy(binBuffer,bin.c_str());
+		wchar_t binParams[MAX_PATH];
+		wchar_t* paramsPtr = NULL;
+		if(!params.empty())
+		{
+			paramsPtr = binParams;
+			wcscpy(binParams,params.c_str());
+		}
+
         while(true)
         {
             //服務停止 信號
@@ -26,8 +35,8 @@ std::wstring bin1 = L"E:\\program\\king-document-build/king-document-build.exe -
             //創建進程
             memset(&startupinfo,0,sizeof(STARTUPINFO));
             startupinfo.cb=sizeof(STARTUPINFO);
-            if(!CreateProcess(NULL,
-                              (wchar_t*)bin1.c_str(),
+            if(!CreateProcess(binBuffer,
+                              paramsPtr,
                               NULL,
                               NULL,
                               FALSE,
@@ -51,7 +60,7 @@ std::wstring bin1 = L"E:\\program\\king-document-build/king-document-build.exe -
                 continue;
             }
             //等待 進程 執行 hook
-            Sleep(5000);
+            Sleep(2000);
 
             //運行 進程
 			ResumeThread(process.hThread);
