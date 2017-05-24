@@ -1,9 +1,10 @@
+#include "stdafx.h"
 #include "hook.h"
 #include "hookfuncs.h"
 
 #include "hook.hpp"
 #include "service.h"
-#include "../../service/configure.h"
+#include <cpp-defender/configure.h>
 
 hacker::hook_code_ptr_t g_hpSetConsoleCtrlHandler;
 DWORD g_jmpSetConsoleCtrlHandler;

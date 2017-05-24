@@ -1,9 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vs-hook", "vs-hook\vs-hook.vcxproj", "{9A900DFD-95BA-4ED5-B616-1C76F407FC79}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "loader", "loader\loader.vcxproj", "{30A6DA30-4E73-4C69-A0F0-EE5DED951E65}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vs-hook", "vs-hook\vs-hook.vcxproj", "{2FA83DE7-8B64-47FD-BC7F-43808148740D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +9,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9A900DFD-95BA-4ED5-B616-1C76F407FC79}.Debug|Win32.ActiveCfg = Debug|Win32
-		{9A900DFD-95BA-4ED5-B616-1C76F407FC79}.Debug|Win32.Build.0 = Debug|Win32
-		{9A900DFD-95BA-4ED5-B616-1C76F407FC79}.Release|Win32.ActiveCfg = Release|Win32
-		{9A900DFD-95BA-4ED5-B616-1C76F407FC79}.Release|Win32.Build.0 = Release|Win32
-		{30A6DA30-4E73-4C69-A0F0-EE5DED951E65}.Debug|Win32.ActiveCfg = Debug|Win32
-		{30A6DA30-4E73-4C69-A0F0-EE5DED951E65}.Debug|Win32.Build.0 = Debug|Win32
-		{30A6DA30-4E73-4C69-A0F0-EE5DED951E65}.Release|Win32.ActiveCfg = Release|Win32
-		{30A6DA30-4E73-4C69-A0F0-EE5DED951E65}.Release|Win32.Build.0 = Release|Win32
+		{2FA83DE7-8B64-47FD-BC7F-43808148740D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2FA83DE7-8B64-47FD-BC7F-43808148740D}.Debug|Win32.Build.0 = Debug|Win32
+		{2FA83DE7-8B64-47FD-BC7F-43808148740D}.Release|Win32.ActiveCfg = Release|Win32
+		{2FA83DE7-8B64-47FD-BC7F-43808148740D}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

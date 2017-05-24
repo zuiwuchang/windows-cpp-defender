@@ -13,39 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="include">
-      <UniqueIdentifier>{9f01fd30-42a2-48b7-b821-f16014468f13}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src">
-      <UniqueIdentifier>{fc691e5f-b463-4104-a7bc-963afa018b4d}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\hook.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\service.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
+    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\main.h">
+    <ClInclude Include="stdafx.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\hook.h">
-      <Filter>include</Filter>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\service.h">
-      <Filter>include</Filter>
+    <ClInclude Include="hook.h">
+      <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\hook.hpp">
-      <Filter>include</Filter>
+    <ClInclude Include="hook.hpp">
+      <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\hookfuncs.h">
-      <Filter>include</Filter>
+    <ClInclude Include="hookfuncs.h">
+      <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="service.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hook.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="service.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,10 +1,7 @@
+#include "stdafx.h"
 #include "service.h"
-#include "../../service/configure.h"
-#include "../../service/utf.hpp"
-#include <boost/filesystem.hpp>
-#include <boost/property_tree/ptree.hpp>
-#include <boost/property_tree/json_parser.hpp>
-#include <boost/algorithm/string.hpp>
+#include <cpp-defender/configure.h>
+#include <cpp-defender/utf.hpp>
 #include "hook.h"
 service::service():_signal(NULL),_ctrlHandler(NULL)
 {
