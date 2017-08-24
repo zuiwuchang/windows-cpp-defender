@@ -10,7 +10,7 @@ windows 下的一個 服務包裝軟體 同時是一個看門狗 軟體
 有用的 服務功能 通常有複雜的邏輯 從而 提高了 崩潰的 可能 故單獨啓動一個 邏輯相對簡單(所以不容易崩潰) 的軟體 去監視 服務功能 在啓崩潰後 重新啓動是必要的 defender 亦提高此功能
 
 # how
-編輯 my.json 在其中 配置 要包裝的 服務 信息
+編輯 service.json 在其中 配置 要包裝的 服務 信息
 
 service -i 安裝服務
 
@@ -20,7 +20,7 @@ service -s 以windows服務方式運行
 
 service  以普通進程 運行
 
-# my.json
+# service.json
 <pre>
 {
 	//服務名稱
