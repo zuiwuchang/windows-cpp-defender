@@ -1,6 +1,6 @@
 #ifndef SERVICE_H
 #define SERVICE_H
-#include "../../service/singleton.hpp"
+#include "../../include/cpp-defender/singleton.hpp"
 #include <windows.h>
 #include <boost/thread.hpp>
 class service

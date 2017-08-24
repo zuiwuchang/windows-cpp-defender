@@ -83,17 +83,18 @@ void service::run(HINSTANCE hinstDLL)
 void service::work_thread()
 {
     //等待 結束 信號
-	KING_INFO("wait ctrl + c signal")
+	KING_INFO("wait ctrl + c signal");
 	WaitForSingleObject(_signal,INFINITE);
-
+	
 	//調用 ctrl + c
 	PHANDLER_ROUTINE ctrlHandler = ctrl_handler();
 	
 	if(ctrlHandler)
 	{
+		KING_INFO("ctrlHandler "<<CTRL_C_EVENT);
 		ctrlHandler(CTRL_C_EVENT);
 	}
 	
 	//關閉 進程
-	ExitProcess(0);
+	ExitProcess(1);
 }

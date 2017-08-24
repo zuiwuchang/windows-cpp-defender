@@ -48,6 +48,7 @@ void WINAPI filterSetConsoleCtrlHandler(
   BOOL ok
 )
 {
+	KING_INFO("filterSetConsoleCtrlHandler "<<HandlerRoutine<<"  "<<ok)
 	if(ok && HandlerRoutine)
 	{
 		service::get_mutable_instance().ctrl_handler(HandlerRoutine);

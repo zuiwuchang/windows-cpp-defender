@@ -44,11 +44,13 @@ int normal_main()
 
     //停止 服務
     s.stop();
+	s.wait();
 #else
     //等待 服務結束
     s.wait();
 #endif
-    KING_INFO("normal_main exit success")
+    KING_INFO("normal_main exit success");
+	std::system("pause");
     return 0;
 }
 BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)

@@ -10,8 +10,8 @@
 #include <king/Debug.hpp>
 
 
-#define CONFIGURE_FILE  "my.json"
+#define CONFIGURE_FILE  "service.json"
 
-#define VERSION L"1.0.0"
+#define VERSION L"1.0.1"
 #define EVENT_MAGIC_NAME L"_magic-king-cpp-defender-v1."
 #endif // CONFIGURE_H_INCLUDED
